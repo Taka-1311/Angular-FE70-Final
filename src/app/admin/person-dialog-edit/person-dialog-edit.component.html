@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="form__add">
+        <h3>Editing <b>{{editedPerson.first_name}} {{editedPerson.last_name}}</b></h3>
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>First Name*</mat-label>
+                <input matInput [(ngModel)]="editedPerson.first_name">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>Last Name*</mat-label>
+                <input matInput [(ngModel)]="editedPerson.last_name">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>Email*</mat-label>
+                <input matInput [(ngModel)]="editedPerson.email">
+            </mat-form-field>
+        </div>
+        <div class="form__add__btns">
+            <button mat-stroked-button color="warn" (click)="onCloseDialog()">Cancel</button>
+            <button mat-flat-button color="primary" (click)="onSave()">Save</button>
+        </div>
+    </div>
+</div>

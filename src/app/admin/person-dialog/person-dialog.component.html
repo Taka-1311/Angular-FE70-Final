@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="form__add">
+        <h3>Add a User</h3>
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>First Name*</mat-label>
+                <input [(ngModel)]="person.first_name" matInput>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>Last Name*</mat-label>
+                <input [(ngModel)]="person.last_name" matInput>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>Email*</mat-label>
+                <input [(ngModel)]="person.email" matInput>
+            </mat-form-field>
+        </div>
+        <div class="form__add__btns">
+            <button (click)="onCancelClick()" mat-stroked-button color="warn">Cancel</button>
+            <button mat-flat-button color="primary" (click)="onAddPerson()">Add</button>
+        </div>
+    </div>
+</div>
