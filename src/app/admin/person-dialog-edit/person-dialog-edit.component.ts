@@ -1,4 +1,4 @@
-import { CRUDService } from '../../services/crud.service';
+import { AdminService } from '../../services/admin.service';
 import { Person } from '../../models/person';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Component, OnInit, Inject } from '@angular/core';
@@ -12,7 +12,7 @@ export class PersonDialogEditComponent implements OnInit {
 
   editedPerson: Person = new Person();
 
-  constructor(private crudService: CRUDService, @Inject(MAT_DIALOG_DATA) public data: Person, private dialogRef: MatDialogRef<PersonDialogEditComponent>) {
+  constructor(private adminService: AdminService, @Inject(MAT_DIALOG_DATA) public data: Person, private dialogRef: MatDialogRef<PersonDialogEditComponent>) {
     this.editedPerson = { ...data };
   }
 
@@ -24,7 +24,7 @@ export class PersonDialogEditComponent implements OnInit {
   }
 
   onSave() {
-    this.crudService.onSave.emit(this.editedPerson);
+    this.adminService.onSave.emit(this.editedPerson);
     this.dialogRef.close();
   }
 

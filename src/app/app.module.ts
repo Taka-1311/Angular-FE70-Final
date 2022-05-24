@@ -1,4 +1,4 @@
-import { CRUDModule } from './admin/admin.module';
+import { AdminModule } from './admin/admin.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    CRUDModule,
+    AdminModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

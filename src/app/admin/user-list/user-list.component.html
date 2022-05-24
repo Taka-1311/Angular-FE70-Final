@@ -1,0 +1,18 @@
+<div class="profiles">
+    <div *ngFor="let p of profiles, let i = index" class="profiles__item">
+        <div class="profiles__item__ava">
+            <img src="{{p.avatar}}" alt="avatar">
+        </div>
+        <div class="profiles__item__des">
+            <div>{{p.first_name}} {{p.last_name}}</div>
+            <div>{{p.email}}</div>
+        </div>
+        <div class="profiles__item__btns">
+            <button mat-stroked-button color="warn" (click)="onDelete(p.id)">Delete</button>
+            <button mat-stroked-button color="primary" (click)="openEditDialog(p)">Edit</button>
+        </div>
+    </div>
+</div>
+<button (click)="openDialogAdd()" class="btn__add" mat-fab color="accent">
+    <mat-icon>add</mat-icon>
+</button>

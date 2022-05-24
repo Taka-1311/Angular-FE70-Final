@@ -7,7 +7,7 @@ import { catchError, map, Observable, of, Subject, tap } from 'rxjs';
     providedIn: 'root'
 })
 
-export class CRUDService {
+export class AdminService {
 
     rawData: any = [];
     profiles: Person[] = [];
