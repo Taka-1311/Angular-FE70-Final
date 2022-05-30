@@ -1,15 +1,20 @@
+<div class="text-center">
+    <pagination-controls style="font-size: 26px; margin: 20px" (pageChange)="p = $event">
+    </pagination-controls>
+</div>
 <div class="profiles">
-    <div *ngFor="let p of profiles, let i = index" class="profiles__item">
+    <div class="profiles__item"
+        *ngFor="let p of profiles | paginate: {itemsPerPage: 12, currentPage: p }, let i = index ">
         <div class="profiles__item__ava">
-            <img src="{{p.avatar}}" alt="avatar">
+            <img [src]="randomAvatarGen()" alt="avatar">
         </div>
         <div class="profiles__item__des">
-            <div>{{p.first_name}} {{p.last_name}}</div>
+            <div>{{p.hoTen}}</div>
             <div>{{p.email}}</div>
         </div>
         <div class="profiles__item__btns">
-            <button mat-stroked-button color="warn" (click)="onDelete(p.id)">Delete</button>
-            <button mat-stroked-button color="primary" (click)="openEditDialog(p)">Edit</button>
+            <button mat-stroked-button color="warn">Delete</button>
+            <button mat-stroked-button color="primary">Edit</button>
         </div>
     </div>
 </div>

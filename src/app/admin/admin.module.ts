@@ -1,3 +1,4 @@
+import { NgxPaginationModule } from 'ngx-pagination';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgMaterialModule } from '../ng_materials/material.module';
@@ -16,10 +17,11 @@ const adminRoute: Routes = [
 
 @NgModule({
   imports: [
+    NgxPaginationModule,
     NgMaterialModule,
     FormsModule,
     CommonModule,
-    RouterModule.forChild(adminRoute)
+    RouterModule.forChild(adminRoute),
   ],
   exports: [
     AdminComponent,
