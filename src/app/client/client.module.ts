@@ -3,15 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgMaterialModule } from './../ng_materials/material.module';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ClientComponent } from './client.component';
 import { NgModule } from '@angular/core';
-import { ClientHomeComponent } from './client/client.component';
+import { ClientComponent } from './client/client.component';
 import { CarouselComponent } from '../carousel/carousel.component';
+import { ClientHomeComponent } from './client-home/client-home.component';
 
 const clientRoute: Routes = [
     {
-        path: '', component: ClientHomeComponent, children: [
-            { path: 'carousel', component: CarouselComponent },
+        path: '', component: ClientComponent, children: [
+            { path: '', component: ClientHomeComponent },
         ]
     }
 ]
@@ -29,9 +29,9 @@ const clientRoute: Routes = [
     ],
     declarations: [
         ClientComponent,
-        ClientHomeComponent,
         HeaderComponent,
-        CarouselComponent
+        CarouselComponent,
+        ClientHomeComponent,
     ],
 })
 export class ClientModule { }

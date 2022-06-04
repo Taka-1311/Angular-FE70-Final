@@ -16,10 +16,33 @@
     href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
   <link rel="stylesheet"
     href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
 </head>
 
-<body class="mat-typography">
-  <app-root></app-root>
+<style>
+  .bg {
+    background-image: url('assets/img/TRAINGRAVEYARD.jpg');
+    background-size: cover;
+    height: 100%;
+  }
+
+  .bg_layer {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.651);
+  }
+</style>
+
+<body class="mat-typography bg">
+  <div class="bg_layer">
+    <app-root></app-root>
+  </div>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
