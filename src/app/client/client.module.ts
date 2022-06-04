@@ -1,3 +1,4 @@
+import { HeaderComponent } from './../header/header.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgMaterialModule } from './../ng_materials/material.module';
 import { FormsModule } from '@angular/forms';
@@ -28,6 +29,7 @@ const clientRoute: Routes = [
     declarations: [
         ClientComponent,
         ClientHomeComponent,
+        HeaderComponent,
     ],
 })
 export class ClientModule { }
