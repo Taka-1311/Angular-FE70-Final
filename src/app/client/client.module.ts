@@ -5,12 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ClientComponent } from './client.component';
 import { NgModule } from '@angular/core';
-import { ClientHomeComponent } from './client-home/client-home.component';
+import { ClientHomeComponent } from './client/client.component';
+import { CarouselComponent } from '../carousel/carousel.component';
 
 const clientRoute: Routes = [
     {
         path: '', component: ClientHomeComponent, children: [
-            { path: 'home', component: ClientHomeComponent },
+            { path: 'carousel', component: CarouselComponent },
         ]
     }
 ]
@@ -30,6 +31,7 @@ const clientRoute: Routes = [
         ClientComponent,
         ClientHomeComponent,
         HeaderComponent,
+        CarouselComponent
     ],
 })
 export class ClientModule { }
