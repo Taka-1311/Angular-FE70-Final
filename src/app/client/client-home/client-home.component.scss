@@ -1,0 +1,53 @@
+.myNav {
+    background-color: #0d47a1;
+    height: 80px;
+
+}
+
+.nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    &__list {
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        &__item {
+            position: relative;
+            padding: 0 20px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            a {
+                font-size: 1.2rem;
+                text-align: center;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                color: #fff;
+                z-index: 0;
+
+                &:hover::before {
+                    height: 100%;
+                    transition: 0.3s all;
+                    z-index: -1;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    background-color: crimson;
+                    height: 0%;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+    }
+}

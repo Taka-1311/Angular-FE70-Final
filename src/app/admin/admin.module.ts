@@ -11,8 +11,13 @@ import { PersonDialogEditComponent } from './person-dialog-edit/person-dialog-ed
 import { UserListComponent } from './user-list/user-list.component';
 
 const adminRoute: Routes = [
-  { path: '', component: AdminHomeComponent },
-  { path: 'admin/userlist', component: UserListComponent }
+  {
+    path: '', component: AdminComponent, children: [
+      { path: '', component: AdminHomeComponent },
+      { path: 'home', component: AdminHomeComponent },
+      { path: 'userlist', component: UserListComponent }
+    ]
+  },
 ]
 
 @NgModule({
@@ -24,7 +29,6 @@ const adminRoute: Routes = [
     RouterModule.forChild(adminRoute),
   ],
   exports: [
-    AdminComponent,
   ],
   declarations: [
     AdminComponent,

@@ -1,4 +1,4 @@
-import { KEY_TOKEN_CYBERSOFT, TOKEN_CYBERSOFT } from './../_Core/utils';
+import { KEY_NAME, TOKEN_VALUE } from './../_Core/utils';
 import { Person } from '../models/person';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable, OnInit } from '@angular/core';
@@ -30,7 +30,7 @@ export class AdminService {
     getUsers(): Observable<User[]> {
         //Request header
         let headers = new HttpHeaders();
-        headers = headers.set(KEY_TOKEN_CYBERSOFT, TOKEN_CYBERSOFT);
+        headers = headers.set(KEY_NAME, TOKEN_VALUE);
         let userArray: any = this.http.get('http://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01', { headers: headers });
         return userArray;
     }
