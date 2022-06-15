@@ -1,6 +1,6 @@
 .nav {
     height: 100%;
-    background-color: rgba(7, 7, 7, 0.432);
+    background-color: whitesmoke;
     display: flex;
     align-items: center;
     padding: 20px;
@@ -9,7 +9,7 @@
     border-radius: 0 0 30px 30px;
 
     &__logo {
-        width: 150px;
+        width: 125px;
     }
 
     .nav__item {
@@ -25,7 +25,7 @@
             height: 100%;
             display: flex;
             align-items: center;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
 
             &__item {
                 position: relative;
@@ -36,14 +36,19 @@
 
                 a {
                     text-align: center;
-                    font-size: 1.5rem;
+                    font-size: 1.3rem;
                     height: 100%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     text-decoration: none;
-                    color: #fff;
+                    color: black;
+                    text-transform: uppercase;
                     z-index: 0;
+
+                    &:hover {
+                        color: #fff;
+                    }
 
                     &:hover::before {
                         height: 100%;
@@ -68,7 +73,7 @@
             height: 100%;
             display: flex;
             align-items: center;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
         }
     }
 
@@ -76,22 +81,31 @@
         width: 1000px;
 
         .form__input {
-            border: none;
-            padding: 10px 20px;
-            font-size: 1.5rem;
+            border: 2px solid gray;
+            padding: 5px 20px;
+            font-size: 1.2rem;
             border-radius: 25px 0 0 25px;
         }
 
         .form__btn {
             background-color: transparent;
             border-radius: 0px 25px 25px 0px;
-            border-color: #fff;
+            border: 2px solid gray;
+            border-left: none;
             padding: 0 20px;
             font-size: 1.3rem;
             transition: all 0.3s;
 
             &:hover {
-                background-color: #4279a0;
+                background-color: #cb3153;
+            }
+
+            i {
+                color: black;
+
+                &:hover {
+                    color: white;
+                }
             }
         }
     }
