@@ -1,4 +1,43 @@
-<div>
-    <p>client-home works! </p>
-    <!-- <app-carousel></app-carousel> -->
+<div class="container">
+    <div class="top-picks-container">
+        <div class="headline">
+            <div class="headline-text">
+                <p>top picks</p>
+            </div>
+        </div>
+        <div class="movies-container">
+            <div *ngFor="let top of topPicks" class="movies-item">
+                <img class="item-img" [src]="top.hinhAnh">
+                <div class="item-description">
+                    <p class="description-name">{{top.tenPhim}}</p>
+                    <div class="description-btn-trailer" (click)="openTrailer(top.trailer)">
+                        <p>Trailer
+                            <i class="las la-play"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="all-movies-container">
+        <div class="headline">
+            <div class="headline-text">
+                <p>Available</p>
+            </div>
+        </div>
+        <div class="movies-container">
+            <div *ngFor="let m of movies.slice(0,15)" class="movies-item">
+                <img class="item-img" [src]="m.hinhAnh">
+                <div class="item-description">
+                    <p class="description-name">{{m.tenPhim}}</p>
+                    <div class="description-btn-trailer" (click)="openTrailer(m.trailer)">
+                        <p>Trailer
+                            <i class="las la-play"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

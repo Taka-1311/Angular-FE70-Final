@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ClientComponent } from './client/client.component';
-import { CarouselComponent } from '../carousel/carousel.component';
 import { ClientHomeComponent } from './client-home/client-home.component';
 
 const clientRoute: Routes = [
@@ -30,7 +29,6 @@ const clientRoute: Routes = [
     declarations: [
         ClientComponent,
         HeaderComponent,
-        CarouselComponent,
         ClientHomeComponent,
     ],
 })
