@@ -1,3 +1,4 @@
+import { FooterComponent } from './../footer/footer.component';
 import { HeaderComponent } from './../header/header.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgMaterialModule } from './../ng_materials/material.module';
@@ -30,6 +31,7 @@ const clientRoute: Routes = [
         ClientComponent,
         HeaderComponent,
         ClientHomeComponent,
+        FooterComponent
     ],
 })
 export class ClientModule { }
