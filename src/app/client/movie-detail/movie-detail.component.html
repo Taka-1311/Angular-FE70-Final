@@ -1,0 +1,33 @@
+<div class="detail-container">
+    <div class="detail-visual">
+        <div class="detail-title">
+            <p class="title">{{movie.tenPhim}}</p>
+        </div>
+        <div class="detail-poster-trailer">
+            <div class="detail-img">
+                <img [src]="movie.hinhAnh">
+            </div>
+            <div class="detail-trailer">
+                <iframe width="850" height="433" src="https://www.youtube.com/embed/qzwLLKD7ZIQ"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="detail-description">
+        <div class="description">
+            <p>
+                <span style="color: #5799ef;">Description: </span>
+                {{movie.moTa}}
+            </p>
+        </div>
+        <hr>
+        <div class="premier">
+            <p>
+                <span style="color: #5799ef;">Premier: </span>
+                {{movie.ngayKhoiChieu | date: 'dd/MM/yyyy'}}
+            </p>
+        </div>
+    </div>
+</div>

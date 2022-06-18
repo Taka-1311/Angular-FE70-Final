@@ -17,4 +17,12 @@ export class MovieService {
         let movieArr: any = this.http.get('http://movienew.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01', { headers: headers });
         return movieArr;
     }
+
+    getMovieDetail(id: string): Observable<Movie> {
+        let headers = new HttpHeaders();
+        headers = headers.set(KEY_NAME, TOKEN_VALUE);
+        let movie: any = this.http.get(`https://movienew.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=${id}`, { headers: headers });
+        return movie;
+
+    }
 }

@@ -7,7 +7,8 @@
         </div>
         <div class="movies-container">
             <div *ngFor="let top of topPicks" class="movies-item">
-                <img class="item-img" [src]="top.hinhAnh">
+                <img routerLink="/detail" [queryParams]="{'id': top.maPhim}" class="item-img"
+                    [src]="top.hinhAnh">
                 <div class="item-description">
                     <p class="description-name">{{top.tenPhim}}</p>
                     <div class="description-btn-trailer" (click)="openTrailer(top.trailer)">
@@ -28,7 +29,8 @@
         </div>
         <div class="movies-container">
             <div *ngFor="let m of movies.slice(0,15)" class="movies-item">
-                <img class="item-img" [src]="m.hinhAnh">
+                <img routerLink="/detail" [queryParams]="{'id': m.maPhim}" class="item-img"
+                    [src]="m.hinhAnh">
                 <div class="item-description">
                     <p class="description-name">{{m.tenPhim}}</p>
                     <div class="description-btn-trailer" (click)="openTrailer(m.trailer)">

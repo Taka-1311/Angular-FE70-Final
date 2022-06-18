@@ -1,0 +1,51 @@
+.detail-container {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1134px;
+
+    .detail-visual {
+
+        .detail-title {
+
+            .title {
+                color: white;
+                font-size: 32px;
+                text-transform: uppercase;
+                text-align: center;
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+    .detail-poster-trailer {
+        display: flex;
+        justify-content: center;
+
+        .detail-img {
+
+            img {
+                height: 433px;
+                width: 284px;
+            }
+        }
+
+        .detail-trailer {
+            display: flex;
+        }
+    }
+
+    .detail-description {
+        display: flex;
+        flex-direction: column;
+        background-color: #1a1a1a;
+        color: white;
+        font-size: 1.2rem;
+        padding: 50px 150px;
+
+        p {
+            margin: 0;
+            line-height: 1.75;
+        }
+    }
+}

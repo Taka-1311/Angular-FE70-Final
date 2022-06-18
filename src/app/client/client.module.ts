@@ -7,11 +7,13 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ClientComponent } from './client/client.component';
 import { ClientHomeComponent } from './client-home/client-home.component';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 
 const clientRoute: Routes = [
     {
         path: '', component: ClientComponent, children: [
             { path: '', component: ClientHomeComponent },
+            { path: 'detail', component: MovieDetailComponent }
         ]
     }
 ]
@@ -31,7 +33,8 @@ const clientRoute: Routes = [
         ClientComponent,
         HeaderComponent,
         ClientHomeComponent,
-        FooterComponent
+        FooterComponent,
+        MovieDetailComponent
     ],
 })
 export class ClientModule { }
