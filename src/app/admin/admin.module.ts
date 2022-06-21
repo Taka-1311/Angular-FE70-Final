@@ -10,6 +10,7 @@ import { PersonDialogComponent } from './person-dialog/person-dialog.component';
 import { PersonDialogEditComponent } from './person-dialog-edit/person-dialog-edit.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserSearchComponent } from './user-search/user-search.component';
+import { MovieListComponent } from './movie-list/movie-list.component';
 
 const adminRoute: Routes = [
   {
@@ -17,7 +18,8 @@ const adminRoute: Routes = [
       { path: '', component: AdminHomeComponent },
       { path: 'home', component: AdminHomeComponent },
       { path: 'userlist', component: UserListComponent },
-      { path: 'userlist/search', component: UserSearchComponent }
+      { path: 'userlist/search', component: UserSearchComponent },
+      { path: 'movielist', component: MovieListComponent },
     ]
   },
 ]
@@ -39,6 +41,7 @@ const adminRoute: Routes = [
     UserListComponent,
     AdminHomeComponent,
     UserSearchComponent,
+    MovieListComponent,
   ],
 })
 export class AdminModule { }

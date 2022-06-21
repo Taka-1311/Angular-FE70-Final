@@ -1,0 +1,54 @@
+.movies {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+
+    .movies-item {
+        display: flex;
+        margin: 10px 10px;
+        width: 600px;
+        background-color: white;
+        border-radius: 20px;
+
+        .item-img {
+            img {
+                width: 200px;
+                height: 250px;
+            }
+        }
+
+        .item-context {
+            padding: 10px;
+
+            .item-title {
+                font-size: 16px;
+                margin-bottom: 20px;
+                height: 30px;
+                font-weight: bold;
+            }
+
+            .item-description {
+                height: 100px;
+            }
+
+            .item-action {
+                margin-top: 35px;
+
+                .action {
+                    width: 80px;
+                }
+
+                .action-edit {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+.btn-add {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}

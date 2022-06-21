@@ -1,0 +1,19 @@
+<div class="movies">
+    <div *ngFor="let m of movies; let i = index" class="movies-item">
+        <div class="item-img">
+            <img [src]="m.hinhAnh">
+        </div>
+        <div class="item-context">
+            <p class="item-title">{{m.tenPhim}}</p>
+            <p class="item-description">{{m.moTa.length > 253 ? m.moTa.substr(0, 250) + "..." :
+                m.moTa}}</p>
+            <div class="item-action">
+                <button class="btn btn-primary action action-edit">edit</button>
+                <button class="btn btn-danger action">delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+<button class="btn-add" mat-fab color="accent">
+    <mat-icon>add</mat-icon>
+</button>
