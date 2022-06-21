@@ -6,6 +6,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
     imports: [
@@ -15,7 +16,8 @@ import { MatSelectModule } from '@angular/material/select';
         MatDialogModule,
         MatFormFieldModule,
         MatInputModule,
-        MatSelectModule
+        MatSelectModule,
+        MatDatepickerModule
     ],
     exports: [
         MatButtonModule,
@@ -24,7 +26,8 @@ import { MatSelectModule } from '@angular/material/select';
         MatDialogModule,
         MatFormFieldModule,
         MatInputModule,
-        MatSelectModule
+        MatSelectModule,
+        MatDatepickerModule
     ],
 })
 export class NgMaterialModule { }

@@ -23,6 +23,13 @@ export class MovieService {
         headers = headers.set(KEY_NAME, TOKEN_VALUE);
         let movie: any = this.http.get(`https://movienew.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=${id}`, { headers: headers });
         return movie;
+    }
 
+    addMovie(movie: any): Observable<any> {
+        let headers = new HttpHeaders({
+            'TokenCybersoft': TOKEN_VALUE,
+        });
+        let ob = this.http.post('https://movienew.cybersoft.edu.vn/api/QuanLyPhim/ThemPhimUploadHinh', movie, { headers: headers })
+        return ob;
     }
 }

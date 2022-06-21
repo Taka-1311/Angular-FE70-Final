@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="movies-container">
-            <div *ngFor="let m of movies.slice(0,15)" class="movies-item">
+            <div *ngFor="let m of movies.slice(0,20)" class="movies-item">
                 <img routerLink="/home/detail" [queryParams]="{'id': m.maPhim}" class="item-img"
                     [src]="m.hinhAnh">
                 <div class="item-description">

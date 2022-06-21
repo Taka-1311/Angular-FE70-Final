@@ -1,0 +1,41 @@
+<div class="form__add">
+    <h3>Add New Movie</h3>
+    <!-- <div>
+        <mat-form-field style="width: 100%;" appearance="fill">
+            <mat-label>Mã Phim</mat-label>
+            <input [(ngModel)]="movie.maPhim" matInput>
+        </mat-form-field>
+    </div> -->
+    <div>
+        <mat-form-field style="width: 100%;" appearance="fill">
+            <mat-label>Tên phim</mat-label>
+            <input [(ngModel)]="movie.tenPhim" matInput>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field style="width: 100%;" appearance="fill">
+            <mat-label>Trailer URL</mat-label>
+            <input [(ngModel)]="movie.trailer" matInput>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field style="width: 100%;" class="example-full-width" appearance="fill">
+            <mat-label>Leave a comment</mat-label>
+            <textarea [(ngModel)]="movie.moTa" matInput></textarea>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field style="width: 100%;" appearance="fill">
+            <mat-label>Ngày khởi chiếu (DD/MM/YYYY)</mat-label>
+            <input [(ngModel)]="movie.ngayKhoiChieu" matInput>
+        </mat-form-field>
+    </div>
+    <div>
+        <input (change)="onFileChange($event)" name="blobFile" type="file" #imgUpload>
+    </div>
+    <div class=" form-btns">
+        <button (click)="onCancel()" style="margin-right: 5px;" mat-stroked-button
+            color="warn">Cancel</button>
+        <button mat-flat-button color="primary" (click)="addMovie()">Add</button>
+    </div>
+</div>

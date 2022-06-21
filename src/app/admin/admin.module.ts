@@ -11,6 +11,7 @@ import { PersonDialogEditComponent } from './person-dialog-edit/person-dialog-ed
 import { UserListComponent } from './user-list/user-list.component';
 import { UserSearchComponent } from './user-search/user-search.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
+import { MovieDialogComponent } from './movie-dialog/movie-dialog.component';
 
 const adminRoute: Routes = [
   {
@@ -42,6 +43,7 @@ const adminRoute: Routes = [
     AdminHomeComponent,
     UserSearchComponent,
     MovieListComponent,
+    MovieDialogComponent,
   ],
 })
 export class AdminModule { }
