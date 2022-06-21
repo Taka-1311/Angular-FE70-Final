@@ -1,0 +1,18 @@
+<div class="profiles">
+    <div class="profiles__item" *ngFor="let p of usersSearch , let i = index ">
+        <!-- <div class="profiles__item__ava">
+            <img [src]="randomAvatarGen()" alt="avatar">
+        </div> -->
+        <div *ngIf="p.maLoaiNguoiDung === 'QuanTri'" class="admin-star">
+            <i class="las la-star"></i>
+        </div>
+        <div class="profiles__item__des">
+            <div style="margin-bottom: 5px;">{{p.hoTen}}</div>
+            <div>{{p.email}}</div>
+        </div>
+        <div class="profiles__item__btns">
+            <button mat-stroked-button color="warn" (click)="onDelete(p.taiKhoan)">Delete</button>
+            <button mat-stroked-button color="primary" (click)="openEditDialog()">Edit</button>
+        </div>
+    </div>
+</div>

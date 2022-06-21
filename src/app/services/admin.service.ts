@@ -42,7 +42,7 @@ export class AdminService {
         return ob;
     }
 
-    updateUser(user: any) {
+    updateUser(user: any): Observable<any> {
         let headers = new HttpHeaders({
             'Authorization': ACCESS_TOKEN,
             'TokenCybersoft': TOKEN_VALUE,
@@ -50,10 +50,12 @@ export class AdminService {
         let ob = this.http.post('https://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung', user, { headers: headers },)
         return ob;
     }
-    // onDelete(id: number): Person[] {
-    //     const result = this.profiles.filter(person => person.id !== id);
-    //     this.profiles = result;
-    //     return this.profiles;
-    // }
+
+    searchUser(termSearch: string): Observable<any> {
+        let headers = new HttpHeaders();
+        headers = headers.set(KEY_NAME, TOKEN_VALUE);
+        let userArray: any = this.http.get(`https://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/TimKiemNguoiDung?MaNhom=GP01&tuKhoa=${termSearch.replace(" ", "")}`, { headers: headers });
+        return userArray;
+    }
 
 }

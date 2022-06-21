@@ -2,15 +2,21 @@
     <mat-toolbar color="primary" style="padding: 0">
         <div class="nav">
             <div class="nav__list">
-                <div class="nav__list__item">
+                <!-- <div class="nav__list__item">
                     <a routerLink="/admin">Home</a>
-                </div>
+                </div> -->
                 <div class="nav__list__item">
                     <a routerLink="/admin/userlist">Users</a>
                 </div>
                 <div class="nav__list__item">
                     <a>Movies</a>
                 </div>
+                <div class="form-group">
+                    <input [(ngModel)]="term" class="search" placeholder="Search user" type="text">
+                </div>
+                <button routerLink="/admin/userlist/search"
+                    [queryParams]="{'term': term.replace(' ', '+')}"
+                    class="btn btn-danger">Search</button>
             </div>
         </div>
     </mat-toolbar>

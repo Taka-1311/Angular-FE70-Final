@@ -9,13 +9,15 @@ import { CommonModule } from '@angular/common';
 import { PersonDialogComponent } from './person-dialog/person-dialog.component';
 import { PersonDialogEditComponent } from './person-dialog-edit/person-dialog-edit.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { UserSearchComponent } from './user-search/user-search.component';
 
 const adminRoute: Routes = [
   {
     path: '', component: AdminComponent, children: [
       { path: '', component: AdminHomeComponent },
       { path: 'home', component: AdminHomeComponent },
-      { path: 'userlist', component: UserListComponent }
+      { path: 'userlist', component: UserListComponent },
+      { path: 'userlist/search', component: UserSearchComponent }
     ]
   },
 ]
@@ -36,6 +38,7 @@ const adminRoute: Routes = [
     PersonDialogEditComponent,
     UserListComponent,
     AdminHomeComponent,
+    UserSearchComponent,
   ],
 })
 export class AdminModule { }
