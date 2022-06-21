@@ -33,7 +33,6 @@ export class UserListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.getProfiles();
     this.getUsers()
   }
 
@@ -49,35 +48,17 @@ export class UserListComponent implements OnInit {
 
   openDialogAdd(): void {
     let dialogRef = this.dialog.open(PersonDialogComponent, {
-      height: '320px',
+      height: '520px',
       width: '300px',
     });
   }
 
-  openEditDialog(p: Person): void {
+  openEditDialog(u: User): void {
     let dialogRef = this.dialog.open(PersonDialogEditComponent, {
       height: '320px',
       width: '300px',
-      data: p,
+      data: u,
     })
   }
-
-  randomAvatarGen(): string {
-    let i = Math.floor(Math.random() * 70)
-    let randomImgUrl = `https://i.pravatar.cc/128?img=${i}`;
-    return randomImgUrl;
-  }
-
-  // getProfiles() {
-  //   this.adminService.getProfiles().subscribe((data: any) => {
-  //     this.adminService.rawData = data;
-  //     this.adminService.profiles = this.adminService.rawData.data;
-  //     this.profiles = this.adminService.profiles;
-  //   })
-  // }
-
-  // onDelete(id: number): void {
-  //   this.profiles = this.adminService.onDelete(id);
-  // }
 
 }

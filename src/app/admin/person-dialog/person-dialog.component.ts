@@ -2,6 +2,7 @@ import { AdminService } from '../../services/admin.service';
 import { Person } from '../../models/person';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-person-dialog',
@@ -10,7 +11,12 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class PersonDialogComponent implements OnInit {
 
-  person: Person = new Person();
+  user: User = new User();
+  role: string = '';
+  userRole = [
+    { value: 'KhachHang', name: 'Khách hàng' },
+    { value: 'QuanTri', name: 'Quản trị' },
+  ]
 
   constructor(private adminService: AdminService, public dialogRef: MatDialogRef<PersonDialogComponent>) { }
 
@@ -23,14 +29,18 @@ export class PersonDialogComponent implements OnInit {
   }
 
   onAddPerson(): void {
-    let i = Math.floor(Math.random() * 70)
-    let randomImgUrl = `https://i.pravatar.cc/128?img=${i}`;
-
-    this.person.avatar = randomImgUrl;
-    this.person.id = this.adminService.profiles.length + 1;
-
-    this.adminService.onAddPerson.emit(this.person);
-    this.dialogRef.close();
-    console.log('emit', this.person)
+    const addedUser = { ...this.user, maNhom: 'GP01' }
+    console.log(addedUser);
+    this.adminService.addUser(addedUser).subscribe({
+      next: result => {
+        console.log(result);
+        alert('Thêm người dùng thành công')
+        this.dialogRef.close();
+      },
+      error: e => {
+        console.log(e)
+        alert(e.error.content)
+      }
+    })
   }
 }

@@ -12,6 +12,17 @@
         margin: 5px 5px;
         box-shadow: 0px 2px 5px grey;
 
+        .admin-star {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 18px;
+
+            i {
+                color: crimson;
+            }
+        }
+
         &__ava {
             text-align: center;
             margin-bottom: 15px;

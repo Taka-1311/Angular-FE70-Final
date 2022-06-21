@@ -1,4 +1,4 @@
-import { KEY_NAME, TOKEN_VALUE } from './../_Core/utils';
+import { KEY_NAME, TOKEN_VALUE, ACCESS_TOKEN } from './../_Core/utils';
 import { Person } from '../models/person';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable, OnInit } from '@angular/core';
@@ -11,21 +11,10 @@ import { User } from '../models/user';
 
 export class AdminService {
 
-    rawData: any = [];
-    profiles: Person[] = [];
-    private url = 'https://reqres.in/api/users';
-
-    onAddPerson = new EventEmitter<Person>();
+    // onAddPerson = new EventEmitter<Person>();
     onSave = new EventEmitter<Person>();
 
     constructor(private http: HttpClient) { }
-
-    getProfiles(): Observable<Person[]> {
-        return this.http.get<Person[]>(this.url).pipe(
-            tap(_ => console.log('fetched raw data')),
-            catchError(this.handleError<Person[]>('getProfiles', []))
-        );
-    }
 
     getUsers(): Observable<User[]> {
         //Request header
@@ -35,21 +24,28 @@ export class AdminService {
         return userArray;
     }
 
-    private handleError<T>(operation = 'operation', result?: T) {
-        return (error: any): Observable<T> => {
-
-            // TODO: send the error to remote logging infrastructure
-            console.error(error); // log to console instead
-
-            // Let the app keep running by returning an empty result.
-            return of(result as T);
-        };
+    addUser(user: any): Observable<any> {
+        let headers = new HttpHeaders({
+            'Authorization': ACCESS_TOKEN,
+            'TokenCybersoft': TOKEN_VALUE,
+        });
+        let ob = this.http.post('https://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/ThemNguoiDung', user, { headers: headers })
+        return ob;
     }
 
-    onDelete(id: number): Person[] {
-        const result = this.profiles.filter(person => person.id !== id);
-        this.profiles = result;
-        return this.profiles;
+    deleteUser(user: any): Observable<any> {
+        let headers = new HttpHeaders({
+            'Authorization': ACCESS_TOKEN,
+            'TokenCybersoft': TOKEN_VALUE,
+        });
+        let ob = this.http.post('https://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/XoaNguoiDung', user, { headers: headers })
+        return ob;
     }
+
+    // onDelete(id: number): Person[] {
+    //     const result = this.profiles.filter(person => person.id !== id);
+    //     this.profiles = result;
+    //     return this.profiles;
+    // }
 
 }
