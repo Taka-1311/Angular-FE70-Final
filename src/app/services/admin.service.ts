@@ -12,7 +12,7 @@ import { User } from '../models/user';
 export class AdminService {
 
     // onAddPerson = new EventEmitter<Person>();
-    onSave = new EventEmitter<Person>();
+    // onSave = new EventEmitter<Person>();
 
     constructor(private http: HttpClient) { }
 
@@ -42,6 +42,14 @@ export class AdminService {
         return ob;
     }
 
+    updateUser(user: any) {
+        let headers = new HttpHeaders({
+            'Authorization': ACCESS_TOKEN,
+            'TokenCybersoft': TOKEN_VALUE,
+        });
+        let ob = this.http.post('https://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung', user, { headers: headers },)
+        return ob;
+    }
     // onDelete(id: number): Person[] {
     //     const result = this.profiles.filter(person => person.id !== id);
     //     this.profiles = result;

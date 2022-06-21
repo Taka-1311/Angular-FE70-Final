@@ -13,30 +13,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
-  p: number = 1;
+  page: number = 1;
   profiles: User[] = [];
 
   constructor(private adminService: AdminService, public dialog: MatDialog) {
-    // adminService.onAddPerson.subscribe(person => {
-    //   this.profiles = [...this.profiles, person];
-    //   adminService.profiles = this.profiles;
-    // })
-
-    // adminService.onSave.subscribe(person => {
-    //   for (let index in this.profiles) {
-    //     if (this.profiles[index].id === person.id) {
-    //       this.profiles[index] = person;
-    //       adminService.profiles = this.profiles;
-    //     }
-    //   }
-    // })
   }
 
   ngOnInit(): void {
     this.getUsers()
   }
 
-  getUsers() {
+  public getUsers() {
     this.adminService.getUsers().subscribe({
       next: (result: any) => {
         console.log(result)
@@ -69,7 +56,7 @@ export class UserListComponent implements OnInit {
 
   openEditDialog(u: User): void {
     let dialogRef = this.dialog.open(PersonDialogEditComponent, {
-      height: '320px',
+      height: '520px',
       width: '300px',
       data: u,
     })

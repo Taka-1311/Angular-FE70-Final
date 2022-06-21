@@ -1,21 +1,43 @@
 <div class="form__add">
-    <h3>Editing <b>{{editedPerson.first_name}} {{editedPerson.last_name}}</b></h3>
+    <h3>Editing <b>{{editedPerson.hoTen}}</b></h3>
     <div>
         <mat-form-field appearance="legacy">
-            <mat-label>First Name*</mat-label>
-            <input matInput [(ngModel)]="editedPerson.first_name">
+            <mat-label>Tài khoản</mat-label>
+            <input [(ngModel)]="editedPerson.taiKhoan" matInput>
         </mat-form-field>
     </div>
     <div>
         <mat-form-field appearance="legacy">
-            <mat-label>Last Name*</mat-label>
-            <input matInput [(ngModel)]="editedPerson.last_name">
+            <mat-label>Họ tên</mat-label>
+            <input [(ngModel)]="editedPerson.hoTen" matInput>
         </mat-form-field>
     </div>
     <div>
         <mat-form-field appearance="legacy">
-            <mat-label>Email*</mat-label>
-            <input matInput [(ngModel)]="editedPerson.email">
+            <mat-label>Email</mat-label>
+            <input [(ngModel)]="editedPerson.email" matInput>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="legacy">
+            <mat-label>Số điện thoại</mat-label>
+            <input [(ngModel)]="editedPerson.soDT" matInput>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="legacy">
+            <mat-label>Mật khẩu</mat-label>
+            <input [(ngModel)]="editedPerson.matKhau" matInput>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="legacy">
+            <mat-label>Loại người dùng</mat-label>
+            <mat-select [(ngModel)]="editedPerson.maLoaiNguoiDung">
+                <mat-option *ngFor="let role of userRole" [value]="role.value" ngDefaultControl>
+                    {{role.name}}
+                </mat-option>
+            </mat-select>
         </mat-form-field>
     </div>
     <div class="form__add__btns">

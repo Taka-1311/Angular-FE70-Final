@@ -35,6 +35,7 @@ export class PersonDialogComponent implements OnInit {
       next: result => {
         console.log(result);
         alert('Thêm người dùng thành công')
+        this.adminService.getUsers();
         this.dialogRef.close();
       },
       error: e => {
