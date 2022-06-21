@@ -33,12 +33,12 @@ export class AdminService {
         return ob;
     }
 
-    deleteUser(user: any): Observable<any> {
+    deleteUser(taiKhoan: string): Observable<any> {
         let headers = new HttpHeaders({
             'Authorization': ACCESS_TOKEN,
             'TokenCybersoft': TOKEN_VALUE,
         });
-        let ob = this.http.post('https://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/XoaNguoiDung', user, { headers: headers })
+        let ob = this.http.delete(`https://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${taiKhoan}`, { headers: headers },)
         return ob;
     }
 

@@ -46,6 +46,20 @@ export class UserListComponent implements OnInit {
     })
   }
 
+  onDelete(taiKhoan: string) {
+    this.adminService.deleteUser(taiKhoan).subscribe({
+      next: result => {
+        console.log(result)
+        this.getUsers();
+        alert('Xoá thành công')
+      },
+      error: e => {
+        console.log(e);
+        alert(e.error.content)
+      }
+    })
+  }
+
   openDialogAdd(): void {
     let dialogRef = this.dialog.open(PersonDialogComponent, {
       height: '520px',

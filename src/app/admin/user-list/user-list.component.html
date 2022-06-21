@@ -16,7 +16,7 @@
             <div>{{p.email}}</div>
         </div>
         <div class="profiles__item__btns">
-            <button mat-stroked-button color="warn">Delete</button>
+            <button mat-stroked-button color="warn" (click)="onDelete(p.taiKhoan)">Delete</button>
             <button mat-stroked-button color="primary">Edit</button>
         </div>
     </div>
