@@ -1,7 +1,9 @@
+import { MatDialog } from '@angular/material/dialog';
 import { AdminService } from './../../services/admin.service';
 import { ActivatedRoute } from '@angular/router';
 import { User } from './../../models/user';
 import { Component, OnInit } from '@angular/core';
+import { PersonDialogEditComponent } from '../person-dialog-edit/person-dialog-edit.component';
 
 @Component({
   selector: 'app-user-search',
@@ -13,7 +15,7 @@ export class UserSearchComponent implements OnInit {
   usersSearch: User[] = []
   // searchTerm: string = '';
 
-  constructor(private activateRoute: ActivatedRoute, private adminService: AdminService) { }
+  constructor(private activateRoute: ActivatedRoute, private adminService: AdminService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getSearchTerm();
@@ -47,7 +49,11 @@ export class UserSearchComponent implements OnInit {
     })
   }
 
-  openEditDialog() {
-
+  openEditDialog(u: User): void {
+    let dialogRef = this.dialog.open(PersonDialogEditComponent, {
+      height: '520px',
+      width: '300px',
+      data: u,
+    })
   }
 }

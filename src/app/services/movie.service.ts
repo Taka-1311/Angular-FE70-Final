@@ -1,4 +1,4 @@
-import { KEY_NAME, TOKEN_VALUE } from './../_Core/utils';
+import { KEY_NAME, TOKEN_VALUE, ACCESS_TOKEN } from './../_Core/utils';
 import { Movie } from './../models/movie';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -30,6 +30,15 @@ export class MovieService {
             'TokenCybersoft': TOKEN_VALUE,
         });
         let ob = this.http.post('https://movienew.cybersoft.edu.vn/api/QuanLyPhim/ThemPhimUploadHinh', movie, { headers: headers })
+        return ob;
+    }
+
+    deleteMovie(movieCode: string): Observable<any> {
+        let headers = new HttpHeaders({
+            'Authorization': ACCESS_TOKEN,
+            'TokenCybersoft': TOKEN_VALUE,
+        });
+        let ob = this.http.delete(`https://movienew.cybersoft.edu.vn/api/QuanLyPhim/XoaPhim?MaPhim=${movieCode}`, { headers: headers },)
         return ob;
     }
 }

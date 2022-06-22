@@ -9,7 +9,8 @@
                 m.moTa}}</p>
             <div class="item-action">
                 <button class="btn btn-primary action action-edit">edit</button>
-                <button class="btn btn-danger action">delete</button>
+                <button class="btn btn-danger action"
+                    (click)="onDelete(m.maPhim.toString())">delete</button>
             </div>
         </div>
     </div>

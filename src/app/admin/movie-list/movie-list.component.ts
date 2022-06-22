@@ -34,7 +34,20 @@ export class MovieListComponent implements OnInit {
   openDialogAdd() {
     let dialogRef = this.dialog.open(MovieDialogComponent, {
       width: '750px',
-      height: '560px',
+      height: '510px',
+    })
+  }
+
+  onDelete(movieCode: string) {
+    this.movieService.deleteMovie(movieCode).subscribe({
+      next: result => {
+        console.log(result);
+        alert('Movie deleted');
+        this.getMovies();
+      },
+      error: e => {
+        console.log(e);
+      }
     })
   }
 }
